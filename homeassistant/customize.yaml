@@ -1,2 +1,4 @@
-sensor.dht_sensor_temperature:
-  friendly_name: Bedroom Temperature
+  # customize:
+    # Add an entry for each entity that you want to overwrite.
+    sensor.bens_bedroom:
+      hidden: true

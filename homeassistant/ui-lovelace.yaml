@@ -1,0 +1,64 @@
+name: Flat Dashboard
+views:
+    # The name of a view will be used as tab title.
+    # Might be used for other things in the future.
+  - name: Home
+    # Each view can have a different theme applied. Theme should be defined in the frontend.
+    # The cards to show on this view.
+    cards:
+        # The entities card will take a list of entities and show their state.
+      - type: camera-preview
+        # Title of the entities card
+        title: Hutt Valley
+        # The entities here will be shown in the same order as specified.
+        entity: camera.generic_camera
+        
+      - type: entities
+        title: Weekly Chores
+        entities:
+          - sensor.upstairs_toilet
+          - sensor.downstairs_toilet
+          - sensor.vacuum_cleaning
+          - sensor.bath
+          
+      - type: entities
+        title: Other Chores
+        entities:
+          - sensor.recycling
+          - sensor.whos_on_dishes
+          - sensor.rubbish
+
+      - type: entity-filter
+        filter:
+          - domain: device_tracker
+            state: 'home'
+        card: glance
+        card_config:
+          title: Who's Home?
+          
+      - type: weather-forecast
+        entity: weather.demo_weather_north
+        
+    # Specify a tab_icon if you want the view tab to be an icon.
+  - tab_icon: mdi:home-assistant
+    # Name of the view. Will be used as the tooltip for tab icon
+    name: Second view
+    cards:
+      - type: entities
+        title: Lots of Kitchen AC
+        entities:
+            # It is totally possible to render duplicates.
+          - input_boolean.switch_ac_kitchen
+          - input_boolean.switch_ac_kitchen
+          - input_boolean.switch_ac_kitchen
+          - input_boolean.switch_ac_kitchen
+          - input_boolean.switch_ac_kitchen
+          - input_boolean.switch_ac_kitchen
+          
+  - tab_icon: mdi:settings
+    name: Debugging
+    cards:
+      - type: entity-filter
+        filter: [{}]
+        card_config:
+          title: All entities
