@@ -142,7 +142,10 @@ weather:
   platform: darksky
   name: Weather Today
   units: si
-  api_key: bffd3c116459883ff49cb80c68c7ae28
+  api_key: !secret darksky_api_key
+  
+# Allow diagnosing system problems
+system_health:
   
 group: !include groups.yaml
 automation: !include automations.yaml
