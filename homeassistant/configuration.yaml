@@ -1,6 +1,16 @@
-
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
+homeassistant:
+  name: Benghazi Studios
+  latitude: -36.8956173
+  longitude: 174.8660777
+  elevation: 10
+  unit_system: metric
+  time_zone: "Pacific/Auckland"
+  external_url: "https://homeassistant.flat.secker.nz"
+  internal_url: "http://homeassistant.flat.secker.nz"
+  media_dirs:
+    media: "/media"
+    recordings: "/mnt/recordings"
+  legacy_templates: false
 
 # Text to speech
 tts:
