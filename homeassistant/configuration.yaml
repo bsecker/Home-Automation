@@ -11,6 +11,8 @@ homeassistant:
     media: "/media"
     recordings: "/mnt/recordings"
   legacy_templates: false
+  auth_providers:
+    - type: homeassistant
 
 # Text to speech
 tts:
